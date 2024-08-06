@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Tours</title>
+    <style>
+        x* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    border: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('girlbag.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    opacity: 1.5;
+    box-shadow: #db0606;
+    padding-top: 50px;
+   
+  
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-size: 40px;
+    margin-left: 23px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 5px rgb(153, 150, 150);
+    font-weight: 700;
+    padding: 40px;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Space out the bars evenly */
+    width: 30px; /* Width of the menu icon */
+    height: 25px; /* Height of the menu icon */
+    cursor: pointer; /* Pointer cursor on hover */
+    background: none; /* Remove any default background */
+    border: none; /* Remove any default border */
+    padding: 0; /* Remove any default padding */
+}
+
+.bar {
+    width: 30px; /* Width of each line */
+    height: 3px; /* Thickness of each line */
+    background-color: white; /* Color of the lines */
+    border-radius: 3px; /* Rounded corners for the lines */
+    transition: all 0.3s ease; /* Smooth transition for animations */
+}
+.menu-toggle:hover .bar {
+    background-color: #4affc0; /* Change color on hover */
+}
+
+.hero {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 5px rgb(153, 150, 150);
+    font-weight: 700;
+    padding: 20px;
+    
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 45px;
+    border-color: rgb(255, 255, 255);
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: none;
+    display: inline-block;
+}
+
+.btn-colorlib {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white; /* White border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    background-color: transparent; /* Transparent background */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-colorlib:hover {
+    background-color: white; /* White background on hover */
+    color: black; /* Black text on hover */
+}
+
+.colorlib-text {
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
+}
+
+.intro {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: row-reverse; /* This reverses the order */
+    align-items: center;
+}
+
+.intro-text {
+    flex: 1;
+    padding-left: 20px; /* Adjust padding to left */
+    text-align: left;
+}
+
+.intro-text, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.intro-image img {
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    float: right; /* Float the image to the right */
+}
+.intro2 {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.intro-content2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.intro-text2 {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.intro-image2 {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.intro-image2 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    background-color:none;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border-color: #4affc0;
+    border-style: solid;
+}
+
+.learn-more:hover {
+    background-color: #17f0b6;
+}
+
+/* Existing styles */
+
+.service-card {
+    text-align: center;
+    flex: 1;
+    min-width: 250px; /* Ensures minimum width for responsiveness */
+    max-width: 300px; /* Adjust based on design */
+    padding: 20px;
+    margin: 10px; /* Space around each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #fff; /* Background color of the cards */
+}
+
+.service-icon {
+    width: 60px; /* Adjust width as needed */
+    height: 60px; /* Adjust height as needed */
+    margin-bottom: 20px; /* Space between icon and text */
+}
+
+.services {
+    padding: 50px 0;
+    font-family: Arial, Helvetica, sans-serif; /* Set font-family for .services */
+    text-align: center; /* Center-align text in .services */
+}
+
+.services h2 {
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to next line */
+    justify-content: space-around; /* Space between cards */
+}
+
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn-video {
+    display: inline-flex;
+    align-items: center;
+    color: rgb(69, 113, 45);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.play-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Adjust size as needed */
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    border-radius: 50%; /* Makes the icon circular */
+    border: 2px solid rgb(69, 113, 45); /* Circle border color */
+    background-color: white; /* Background color of the circle */
+    color: rgb(69, 113, 45); /* Color of the play icon */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.btn-video:hover .play-icon {
+    background-color: rgb(69, 113, 45); /* Change background color on hover */
+    color: white; /* Change icon color on hover */
+}
+
+.btn-video:hover {
+    color: rgb(69, 113, 45); /* Optional: change text color on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .service-card {
+        margin-bottom: 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+.tour-management {
+    padding: 50px 0;
+    text-align: center; /* Center-align text */
+}
+
+.tour-management h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    
+}
+
+.tour-management p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow for smooth sliding effect */
+}
+
+.gallery-slide {
+    display: none; /* Hide all slides initially */
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Optional: Add navigation buttons */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-80%);
+}
+
+.gallery-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.recent-blog-posts {
+
+    color: white; /* White text color */
+    padding: 50px 0;
+    text-align: center; /* Center the text */
+    font-style: normal;
+}
+
+.recent-blog-posts h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: black;
+}
+
+.recent-blog-posts p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-family: 'Arial', sans-serif;
+    color: black;
+}
+
+.blog-cards {
+    display: flex;
+    justify-content: space-around; /* Space around the blog cards */
+    flex-wrap: nowrap; /* Allow wrapping on smaller screens */
+}
+
+.blog-card {
+    background-color: #ffffff; /* White background for blog cards */
+    color: rgb(0, 0, 0); /* Seagreen text color */
+    width: 30%; /* Adjust width as needed */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    text-align: left;
+}
+
+.blog-card img {
+    width: 100%; /* Full width image */
+    height: auto;
+    border-radius: 10px 10px 0 0; /* Rounded corners on top */
+    margin-bottom: 20px;
+}
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .blog-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card {
+        width: 80%; /* Full width for smaller screens */
+    }
+}
+.happy-customers {
+    padding: 50px 0;
+    background-color: #f4f4f4; /* Background color for the section */
+    text-align: center;
+}
+
+.happy-customers h2 {
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 40px;
+}
+
+.customer-reviews {
+    display: flex;
+    justify-content: space-between; /* Space between the review cards */
+    flex-wrap: nowrap; /* Keep the columns in a single row */
+}
+
+.review-card {
+    width: 30%; /* Adjust width to fit three cards in a row */
+    background-color: white; /* Background color of the cards */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+    text-align: center;
+}
+
+.customer-image {
+    width: 100px; /* Size of the circular image */
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    margin-bottom: 15px;
+}
+
+.review-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .customer-reviews {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        justify-content: center; /* Center the cards when wrapping */
+    }
+
+    .review-card {
+        width: 45%; /* Adjust width to fit two cards per row on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .customer-reviews {
+        flex-direction: column; /* Stack the cards vertically on very small screens */
+    }
+
+    .review-card {
+        width: 80%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+}
+.top-destination {
+    background-color: rgb(255, 255, 255);
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.top-destination h2 {
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+}
+
+.top-destination p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.destination-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.destination-card {
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.destination-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.destination-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+}
+
+.destination-card p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.stars {
+    font-size: 1.2rem;
+    color: gold;
+}
+footer {
+    background-color: rgb(47, 46, 46);
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #aaa;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+}
+
+.footer-column input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+}
+.footer-bottom span {
+    color: rgb(100, 99, 99);
+}
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+.team {
+    padding: 20px;
+    text-align: center;
+}
+
+.team h2 {
+    margin-bottom: 10px;
+}
+
+.team p {
+    margin-bottom: 20px;
+    color: #666;
+   
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+    width: calc(33.333% - 20px); /* Adjust width to fit three items per row */
+    box-sizing: border-box;
+}
+
+.team-member img {
+    width: 350px;
+
+    height: 350px;
+   
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+}
+
+.team-member p {
+    margin: 0;
+    color: #333;
+   
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-member {
+        width: calc(50% - 20px); /* Adjust width to fit two items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%; /* Adjust width to fit one item per row */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="menu-container">
+            <div class="navbar">
+                <div class="logo">Hepta</div>
+                <a href="menu-page.html" class="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+        </div>
+        
+            <div class="hero">
+                <h1>About us</h1>
+                <p>A free template by Colorlib. Download and share!</p>
+                <a href="#" class="btn-colorlib">
+                    <span class="colorlib-text">Visit Colorlib</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    
+
+    
+    
+    <script src="script.js"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+        });
+        </script>
+<section class="intro">
+    <div class="container">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h2>Family room</h2><br>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p> <br>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </a>
+                <a href="#learn-more" class="learn-more">Learn More</a>
+            </div>
+            <div class="intro-image">
+                <img src="boy2.png" alt="Mountain View">
+            </div>
+        </div>
+        
+    </div>
+    <section class="intro2">
+        <div class="container">
+            <div class="intro-content2">
+                <div class="intro-text2">
+                    <h2>Persidetial room</h2><br>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p> <br>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </a>
+                    <a href="#learn-more" class="learn-more">Learn More</a>
+                </div>
+                <div class="intro-image2">
+                    <img src="back2.png" alt="Mountain View">
+                </div>
+            </div>
+            
+        </div>
+
+</section>
+      <section class="tour-management">
+        <div class="container">
+            <center>
+            <h2>Hotel Gallery</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, <br>
+                 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the <br>
+                  Semantics, a large language ocean.</p>
+                </center>
+            <div class="gallery">
+                <div class="gallery-slide">
+                    <img src="back.png" alt="Tour Image 1">
+                </div>
+                <div class="gallery-slide">
+                    <img src="boy3.png" alt="Tour Image 2">
+                </div>
+                <div class="gallery-slide">
+                    <img src="swim.png" alt="Tour Image 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="girlbag.png" alt="Tour Image 4">
+                </div>
+                <div class="gallery-slide">
+                    <img src="juice.png" alt="Tour Image 5">
+                </div>
+                <div class="gallery-slide">
+                    <img src="beach.png" alt="Tour Image 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Existing script for menu toggle
+
+        // New script for image gallery
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Automatic slide change every 1 second
+        setInterval(nextSlide, 3000);
+
+        // Event listener for click to change slide
+        document.querySelector('.gallery').addEventListener('click', nextSlide);
+
+        // Initialize gallery display
+        showSlide(currentIndex);
+    </script>
+    
+    <section class="team">
+        <h2>Team</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?rs=1&pid=ImgDetMain" alt="Vince Richardson">
+                <h3>Vince Richardson</h3>
+                <p>CEO, Co-Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://th.bing.com/th/id/OIP.hLTThhxHPeGqFQVjpD1-hwHaE8?rs=1&pid=ImgDetMain" alt="Jean Love">
+                <h3>Jean Love</h3>
+                <p>CTO, Co-Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://th.bing.com/th/id/OIP.88hQwxL9ILYl7PV_HXgWqgHaE8?rs=1&pid=ImgDetMain" alt="Jeff Stark">
+                <h3>Jeff Stark</h3>
+                <p>Marketer, Co-Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://th.bing.com/th/id/OIP.88hQwxL9ILYl7PV_HXgWqgHaE8?rs=1&pid=ImgDetMain" alt="Vince Richardson">
+                <h3>Vince Richardson</h3>
+                <p>CEO, Co-Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://th.bing.com/th/id/OIP.hLTThhxHPeGqFQVjpD1-hwHaE8?rs=1&pid=ImgDetMain" alt="Jean Love">
+                <h3>Jean Love</h3>
+                <p>CTO, Co-Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?rs=1&pid=ImgDetMain" alt="Jeff Stark">
+                <h3>Jeff Stark</h3>
+                <p>Marketer, Co-Founder</p>
+            </div>
+        </div>
+    </section>
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Rooms</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Our Location</a></li>
+                    <li><a href="#">The Hosts</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Restaurant</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p>Address: 98 West 21th Street, Suite 721 New York NY 10016</p>
+                <p>Phone: (+1) 435 3533</p>
+                <p>Email: info@yourdomain.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Subscribe</h3>
+                <p>Sign up for our newsletter</p>
+                <input type="email" placeholder="Your email...">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 All rights reserved | This template is made with <span> ❤</span> by Colorlib</p>
+           
+                <div class="social-icons">
+                    <a href="#"><img src="https://th.bing.com/th/id/R.ac7c4437586fd33b6b0f65925408b0ad?rik=6FfGDRFJujUh8g&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2013%2f01%2ffacebook-icon-black-circle_155320.png&ehk=BuMAJhlSegbPE3BBoW22OQEsHZbMWclvDlUgbZjUMGA%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+                    <a href="#"><img src="https://th.bing.com/th/id/OIP.9_ZXseiaB1tgYquikdl68AHaFj?w=268&h=200&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Instagram"></a>
+                    <a href="#"><img src="https://th.bing.com/th/id/OIP.VsqHoEuY7p-i84-_MHWGkAHaHw?rs=1&pid=ImgDetMain" alt="YouTube"></a>
+                    <a href="#"><img src="https://th.bing.com/th/id/OIP.Vr8DfHIHQWd3rUGnO20uOgHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Twitter"></a>
+                    <a href="#"><img src="https://th.bing.com/th/id/OIP.eb41Yo7b_b1DPmvsgGqyPgHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Indeed"></a>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>
